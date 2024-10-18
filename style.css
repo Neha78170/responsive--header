@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+     font-size: 62.5%;
+     overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+    background-color: rgba(39, 9, 9, 0.178);
+}
+
+header{
+    display: flex;
+    height: 10rem;
+    background: rgb(51, 2, 2);
+    padding: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+}
+.logo a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 3rem;
+    color: white;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+nav ul a:link,
+nav ul a:visited{
+     display:  inline-block;
+     font-size: 2rem;
+     color: white;
+     font-weight: 500;
+     text-decoration: none;
+     text-transform: uppercase;
+}
+nav ul a:hover, 
+nav ul a:active{
+     color: rgb(182, 12, 12);
+    font-size: 2.2rem; 
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(182, 12, 12);
+}
+.logo a:hover{
+    color: rgb(182, 12, 12);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(182, 12, 12);
+}
+.icon{
+    display: none;
+    z-index: 5;
+}
+/* hero-section */
+   .hero-section{
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+    text-align: center;
+    font-size: 20rem;
+   }
+
+/* resposive narbar mobile */
+@media(max-width:768px){
+    header{
+        position: relative;
+        width: 100%;
+    }
+    nav{
+        width: 100%;
+        height: 50vh;
+        background-color: brown;
+        padding: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+        transform: translateX(100%);
+         transition:  all 1s linear;
+        opacity: 0;
+        visibility: hidden;
+         pointer-events: none; 
+         overflow-y: hidden;
+        
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul a{
+        font-size: 2.2rem;
+    }
+     .icon{
+        display: block;
+        font-size: 3rem;
+    }
+     .icon.fa-xmark{
+        display: inline-block;
+        z-index: 7;
+    }
+    .active nav{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+     .active .icon .fa-bars{
+        display: inline-block;
+        z-index: 6;
+        display: none;
+    }
+}
